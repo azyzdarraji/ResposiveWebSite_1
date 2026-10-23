@@ -1,0 +1,151 @@
+/* =========================================================
+   ParentBridge – custom styles on top of Bootstrap 5
+   This file is loaded AFTER Bootstrap, so it can override it.
+   ========================================================= */
+
+/* ===== 1. THEME: our colors replace Bootstrap's defaults ===== */
+:root {
+    --pb-blue: #2563eb;
+    --pb-blue-dark: #1e40af;
+    --pb-yellow: #fde68a;
+
+    --bs-primary: #2563eb;
+    --bs-primary-rgb: 37, 99, 235;
+    --bs-link-color: #2563eb;
+    --bs-link-hover-color: #1e40af;
+    --bs-link-color-rgb: 37, 99, 235;
+    --bs-body-font-family: "Nunito", Arial, sans-serif;
+    --bs-body-color: #1f2937;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 72px; /* the sticky navbar does not hide the section titles */
+}
+
+/* Primary buttons in our blue */
+.btn-primary {
+    --bs-btn-bg: var(--pb-blue);
+    --bs-btn-border-color: var(--pb-blue);
+    --bs-btn-hover-bg: var(--pb-blue-dark);
+    --bs-btn-hover-border-color: var(--pb-blue-dark);
+    --bs-btn-active-bg: var(--pb-blue-dark);
+    --bs-btn-active-border-color: var(--pb-blue-dark);
+}
+
+.btn-outline-primary {
+    --bs-btn-color: var(--pb-blue);
+    --bs-btn-border-color: var(--pb-blue);
+    --bs-btn-hover-bg: var(--pb-blue);
+    --bs-btn-hover-border-color: var(--pb-blue);
+}
+
+.btn {
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+/* ===== 2. NAVBAR ===== */
+.logo-icon {
+    display: inline-grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: var(--pb-blue);
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.navbar .nav-link {
+    font-weight: 600;
+}
+
+.navbar .nav-link:hover {
+    color: var(--pb-blue);
+}
+
+/* ===== 3. HERO: background image + dark overlay for readable text ===== */
+.hero {
+    min-height: 80vh;
+    background:
+        linear-gradient(rgba(15, 23, 42, 0.78), rgba(15, 23, 42, 0.82)),
+        url("images/hero.svg") center / cover no-repeat;
+}
+
+.hero h1 {
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+/* ===== 4. PROBLEM boxes ===== */
+.problem-box {
+    background: #fff7ed;
+    border-left: 4px solid #fb923c;
+    border-radius: 0 12px 12px 0;
+    padding: 20px;
+}
+
+/* ===== 5. CARDS ===== */
+.card {
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#how .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 1rem 2rem rgba(37, 99, 235, 0.15) !important;
+}
+
+/* ===== 6. BENEFITS icons ===== */
+.benefit-icon {
+    display: inline-grid;
+    place-items: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--bs-primary-bg-subtle);
+    color: var(--pb-blue);
+    font-size: 1.8rem;
+}
+
+/* ===== 7. ACCORDION in our colors ===== */
+.accordion-button:not(.collapsed) {
+    color: var(--pb-blue-dark);
+    background-color: var(--bs-primary-bg-subtle);
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem rgba(37, 99, 235, 0.25);
+}
+
+/* ===== 8. FORM focus color ===== */
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--pb-blue);
+    box-shadow: 0 0 0 0.25rem rgba(37, 99, 235, 0.2);
+}
+
+/* ===== 9. FOOTER social icons ===== */
+.social-link {
+    color: rgba(255, 255, 255, 0.6);
+    transition: color 0.2s;
+}
+
+.social-link:hover {
+    color: var(--pb-yellow);
+}
+
+/* ===== 10. SMALL SCREENS ===== */
+@media (max-width: 576px) {
+    .hero {
+        min-height: 70vh;
+    }
+
+    .hero h1 {
+        font-size: 2.1rem;
+    }
+}

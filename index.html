@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParentBridge – AI Updates for Parents</title>
+    <meta name="description" content="ParentBridge turns an instructor's short notes into clear progress messages for parents of young coders.">
+
+    <!-- Bootstrap 5 (CSS) + Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Our custom styles (always AFTER Bootstrap, to override it) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ===== 1. NAVBAR (Bootstrap navbar component) ===== -->
+    <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+        <div class="container">
+            <!-- Logo on the left -->
+            <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="#home">
+                <span class="logo-icon">PB</span>
+                ParentBridge
+            </a>
+
+            <!-- Burger button (visible on small screens only) -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                    aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Links on the right -->
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#how">How it works</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#safety">Safety</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item ms-lg-2">
+                        <a class="btn btn-primary rounded-pill px-4" href="app.html">Try it</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- ===== 2. HERO (background image + centered heading, subheading, button) ===== -->
+        <!-- Bootstrap 5 removed the "jumbotron": we build it with utility classes -->
+        <section id="home" class="hero d-flex align-items-center text-center text-white">
+            <div class="container py-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <span class="badge rounded-pill text-bg-light text-primary mb-3 px-3 py-2">
+                            For kids' coding instructors
+                        </span>
+                        <h1 class="display-4 fw-bold mb-3">Your notes. Clear messages for every parent.</h1>
+                        <p class="lead mb-4">
+                            Write 3 short notes per kid. The AI writes a simple message for each parent.
+                            No jargon. You check it, then send it on WhatsApp.
+                        </p>
+                        <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+                            <a href="app.html" class="btn btn-warning btn-lg rounded-pill px-5 fw-bold">Draft my messages</a>
+                            <a href="#how" class="btn btn-outline-light btn-lg rounded-pill px-4">See how it works</a>
+                        </div>
+                        <p class="small mt-3 mb-0 opacity-75">15 messages in under 15 minutes. No account needed.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 3. THE PROBLEM (grid: 3 columns) ===== -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="text-center fw-bold mb-4">Why parents feel lost</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="problem-box h-100">
+                            <i class="bi bi-question-circle fs-3 text-warning"></i>
+                            <h3 class="h5 fw-bold mt-2">Parents don't understand</h3>
+                            <p class="mb-0 text-secondary">HTML, CSS, "function": these words mean nothing to them.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="problem-box h-100">
+                            <i class="bi bi-hourglass-split fs-3 text-warning"></i>
+                            <h3 class="h5 fw-bold mt-2">Instructors have no time</h3>
+                            <p class="mb-0 text-secondary">15 personal messages after an evening class take an hour.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="problem-box h-100">
+                            <i class="bi bi-door-open fs-3 text-warning"></i>
+                            <h3 class="h5 fw-bold mt-2">Kids quit</h3>
+                            <p class="mb-0 text-secondary">Parents lose interest, and some kids stop the course.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 4. HOW IT WORKS (grid of Bootstrap cards: image, title, text, button) ===== -->
+        <section id="how" class="py-5 bg-primary-subtle">
+            <div class="container">
+                <h2 class="text-center fw-bold">How it works</h2>
+                <p class="text-center text-secondary mb-5">Three steps. A few minutes.</p>
+
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <img src="images/step-notes.svg" class="card-img-top" alt="A notebook with short notes">
+                            <div class="card-body d-flex flex-column">
+                                <span class="badge text-bg-primary align-self-start mb-2">Step 1</span>
+                                <h3 class="card-title h5 fw-bold">Write notes</h3>
+                                <p class="card-text text-secondary">For each kid: what they built, what was hard, and the next step.</p>
+                                <a href="#about" class="btn btn-outline-primary rounded-pill mt-auto align-self-start">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <img src="images/step-ai.svg" class="card-img-top" alt="A speech bubble written by the AI">
+                            <div class="card-body d-flex flex-column">
+                                <span class="badge text-bg-primary align-self-start mb-2">Step 2</span>
+                                <h3 class="card-title h5 fw-bold">Draft messages</h3>
+                                <p class="card-text text-secondary">Pick a language. The AI writes one simple message per kid, with one activity to try at home.</p>
+                                <a href="#about" class="btn btn-outline-primary rounded-pill mt-auto align-self-start">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-4">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <img src="images/step-send.svg" class="card-img-top" alt="A phone with a message ready to send">
+                            <div class="card-body d-flex flex-column">
+                                <span class="badge text-bg-primary align-self-start mb-2">Step 3</span>
+                                <h3 class="card-title h5 fw-bold">Check and send</h3>
+                                <p class="card-text text-secondary">You read and edit each message. Then copy it to WhatsApp.</p>
+                                <a href="#safety" class="btn btn-outline-primary rounded-pill mt-auto align-self-start">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 5. ABOUT (grid: two columns, image + text) ===== -->
+        <section id="about" class="py-5">
+            <div class="container">
+                <div class="row align-items-center g-4 g-lg-5">
+                    <div class="col-md-6">
+                        <img src="images/about.svg" class="img-fluid" alt="A kid's first web page on a laptop and the parent's phone with the message">
+                    </div>
+                    <div class="col-md-6">
+                        <h2 class="fw-bold mb-3">Built by an instructor, for instructors</h2>
+                        <p class="text-secondary">
+                            ParentBridge was born in evening coding classes for kids in Tunisia.
+                            After each session, parents asked the same question: "What did my child learn?"
+                            Writing 15 personal answers took an hour.
+                        </p>
+                        <p class="text-secondary">
+                            Now the instructor writes 3 short notes per kid. The AI turns them into a warm,
+                            simple message, in French, Tunisian Arabic or English. The instructor always
+                            has the last word.
+                        </p>
+
+                        <!-- Example message (Bootstrap card) -->
+                        <div class="card border-success-subtle bg-success-subtle mt-4">
+                            <div class="card-body">
+                                <p class="small fw-bold text-uppercase text-success-emphasis mb-2">Example message</p>
+                                <p class="card-text mb-2">
+                                    Hello! This week, [CHILD] built a web page with a title and a photo,
+                                    like a small poster on the internet. Links were a bit tricky, and that's normal.
+                                    At home, ask [CHILD] to show you the page!
+                                </p>
+                                <p class="small fw-bold text-success mb-0"><i class="bi bi-check2-circle"></i> Checked by the instructor</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 6. BENEFITS (grid: 4 columns on large screens) ===== -->
+        <section class="py-5 bg-body-tertiary">
+            <div class="container">
+                <h2 class="text-center fw-bold mb-5">What you get</h2>
+                <div class="row g-4 text-center">
+                    <div class="col-6 col-lg-3">
+                        <i class="bi bi-stopwatch benefit-icon"></i>
+                        <h3 class="h6 fw-bold mt-3">Save time</h3>
+                        <p class="small text-secondary">Minutes, not an hour, for a whole group.</p>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <i class="bi bi-chat-heart benefit-icon"></i>
+                        <h3 class="h6 fw-bold mt-3">Better messages</h3>
+                        <p class="small text-secondary">Every parent understands their child's progress.</p>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <i class="bi bi-emoji-smile benefit-icon"></i>
+                        <h3 class="h6 fw-bold mt-3">Kids stay</h3>
+                        <p class="small text-secondary">Parents encourage at home. Kids stay motivated.</p>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <i class="bi bi-translate benefit-icon"></i>
+                        <h3 class="h6 fw-bold mt-3">3 languages</h3>
+                        <p class="small text-secondary">French, Tunisian Arabic or English.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 7. SAFETY (Bootstrap accordion component) ===== -->
+        <section id="safety" class="py-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <h2 class="text-center fw-bold">Safe by design</h2>
+                        <p class="text-center text-secondary mb-4">Kids' data deserves extra care.</p>
+
+                        <div class="accordion" id="safetyAccordion">
+                            <div class="accordion-item">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#safetyOne" aria-expanded="true" aria-controls="safetyOne">
+                                        <i class="bi bi-shield-check me-2 text-success"></i> No invented facts
+                                    </button>
+                                </h3>
+                                <div id="safetyOne" class="accordion-collapse collapse show" data-bs-parent="#safetyAccordion">
+                                    <div class="accordion-body">
+                                        The AI uses only your notes. The temperature is low, so answers stay focused.
+                                        You approve every message before it is sent.
+                                        <a href="#contact" class="d-block mt-2 fw-bold">View details</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#safetyTwo" aria-expanded="false" aria-controls="safetyTwo">
+                                        <i class="bi bi-incognito me-2 text-success"></i> Privacy first
+                                    </button>
+                                </h3>
+                                <div id="safetyTwo" class="accordion-collapse collapse" data-bs-parent="#safetyAccordion">
+                                    <div class="accordion-body">
+                                        The AI sees "[CHILD]", never the real name. The name is added back in your
+                                        browser. No phone numbers are sent. Nothing is stored.
+                                        <a href="#contact" class="d-block mt-2 fw-bold">View details</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#safetyThree" aria-expanded="false" aria-controls="safetyThree">
+                                        <i class="bi bi-balloon-heart me-2 text-success"></i> Fair and positive
+                                    </button>
+                                </h3>
+                                <div id="safetyThree" class="accordion-collapse collapse" data-bs-parent="#safetyAccordion">
+                                    <div class="accordion-body">
+                                        Every message starts with what went well. The same structure is used for every
+                                        kid, and it is tested in all 3 languages.
+                                        <a href="#contact" class="d-block mt-2 fw-bold">View details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 8. CONTACT (Bootstrap form components) ===== -->
+        <section id="contact" class="py-5 bg-primary-subtle">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-7">
+                        <h2 class="text-center fw-bold">Try ParentBridge in your class</h2>
+                        <p class="text-center text-secondary mb-4">Tell us about your class. We answer within 48 hours.</p>
+
+                        <form id="contactForm" class="card border-0 shadow-sm p-4 needs-validation" novalidate>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="name" class="form-label">Name</label>
+                                    <input type="text" class="form-control" id="name" placeholder="Your name" required>
+                                    <div class="invalid-feedback">Please enter your name.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
+                                    <div class="invalid-feedback">Please enter a valid email.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="role" class="form-label">I am</label>
+                                    <select class="form-select" id="role" required>
+                                        <option value="" selected disabled>Choose...</option>
+                                        <option>An instructor</option>
+                                        <option>A training centre</option>
+                                        <option>A parent</option>
+                                    </select>
+                                    <div class="invalid-feedback">Please choose an option.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="language" class="form-label">Message language</label>
+                                    <select class="form-select" id="language">
+                                        <option>French</option>
+                                        <option>Tunisian Arabic</option>
+                                        <option>English</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label for="message" class="form-label">Message</label>
+                                    <textarea class="form-control" id="message" rows="4" placeholder="How many groups do you teach?" required></textarea>
+                                    <div class="invalid-feedback">Please write a short message.</div>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary btn-lg rounded-pill w-100">Send</button>
+                                </div>
+                            </div>
+                            <div id="formSuccess" class="alert alert-success mt-3 mb-0 d-none" role="status">
+                                <i class="bi bi-check-circle"></i> Thank you! Your message is ready. (Demo: nothing is sent.)
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== 9. FOOTER (copyright + social icons) ===== -->
+    <footer class="py-4 bg-dark text-white-50">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+            <p class="mb-0 small">&copy; 2026 Mohamed Azyz Darragi · A GoMyCode AI Developer Bootcamp project</p>
+            <div class="d-flex gap-3 fs-5">
+                <a href="#" class="social-link" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="social-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="social-link" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="https://github.com/azyzdarraji" class="social-link" aria-label="GitHub"><i class="bi bi-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 (JS): needed for the burger menu and the accordion -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
